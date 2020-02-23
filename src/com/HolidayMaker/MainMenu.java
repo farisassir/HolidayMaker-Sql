@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class MainMenu {
    private Scanner input = new Scanner(System.in);
+   SearchCriteria searchCriteria = new SearchCriteria();
+   MySqlConnection mySqlConnection = new MySqlConnection();
 
     public void start() {
         menu();
@@ -25,6 +27,7 @@ public class MainMenu {
                     System.out.println("register");
                     break;
                 case "2":
+                    searchCriteria.NewHotelSearch();
                     System.out.println("availability");
                     break;
                 case "3":

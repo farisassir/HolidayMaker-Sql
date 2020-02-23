@@ -21,6 +21,10 @@ private void connect(){
     }
 }
 
+public void searchForHotel(){
+
+}
+
 }
 
 
