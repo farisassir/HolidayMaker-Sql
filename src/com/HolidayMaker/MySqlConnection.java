@@ -7,8 +7,7 @@ import java.sql.ResultSet;
 
 public class MySqlConnection {
     private Connection conn = null;
-    private PreparedStatement statement;
-    private ResultSet resultSet;
+
 
 public MySqlConnection(){
     connect();
@@ -21,9 +20,7 @@ private void connect(){
     }
 }
 
-public void roomSearch(){
 
-}
 
 }
 
