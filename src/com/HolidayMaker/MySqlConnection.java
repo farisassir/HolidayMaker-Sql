@@ -21,7 +21,7 @@ private void connect(){
     }
 }
 
-public void searchForHotel(){
+public void roomSearch(){
 
 }
 

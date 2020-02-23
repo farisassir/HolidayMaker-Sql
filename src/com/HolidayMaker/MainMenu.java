@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainMenu {
    private Scanner input = new Scanner(System.in);
-   SearchCriteria searchCriteria = new SearchCriteria();
+   Booking booking = new Booking();
    MySqlConnection mySqlConnection = new MySqlConnection();
 
     public void start() {
@@ -16,10 +16,10 @@ public class MainMenu {
             System.out.println("       Welcome to Holidaymaker Management System        ");
             System.out.println("                        Main Menu                       ");
             System.out.println("                1. Register a customer");
-            System.out.println("                2. Show available room within specified period");
-            System.out.println("                3. Reserve a room");
-            System.out.println("                4. add Extra bed");
-            System.out.println("                5. Cancel booking");
+            System.out.println("                2. Search available room and book");
+            System.out.println("                3. Change Booking");
+            System.out.println("                4. Cancel Booking");
+            System.out.println("                4. Exit");
             String option= input.nextLine();
 
             switch (option){
@@ -27,7 +27,7 @@ public class MainMenu {
                     System.out.println("register");
                     break;
                 case "2":
-                    searchCriteria.NewHotelSearch();
+                    booking.NewHotelSearch();
                     System.out.println("availability");
                     break;
                 case "3":
