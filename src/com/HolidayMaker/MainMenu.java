@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class MainMenu {
    private Scanner input = new Scanner(System.in);
    private SearchCriteria searchCriteria = new SearchCriteria();
-   private MySqlConnection mySqlConnection = new MySqlConnection();
+
+
 
     public void start() {
         menu();
@@ -38,6 +39,9 @@ public class MainMenu {
                     break;
                 case "5":
                     System.out.println("cancellation");
+                break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + option);
             }
         }
     }

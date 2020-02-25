@@ -6,23 +6,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class MySqlConnection {
-    private Connection conn = null;
+    public Connection conn  = null;
 
 
-public MySqlConnection(){
-    connect();
-}
-private void connect(){
-    try{
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/holidayMaker?user=root&password=Ics@00Fine&serverTimezone=UTC");
-    }catch(Exception e){
-        e.printStackTrace();
+
+    public MySqlConnection() {
+        connect();
     }
-}
+
+    void connect() {
+        try {
+            conn=DriverManager.getConnection("jdbc:mysql://localhost/holidayMaker?user=root&password=Ics@00Fine&serverTimezone=UTC");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
-
-}
+        }
 
 
 
