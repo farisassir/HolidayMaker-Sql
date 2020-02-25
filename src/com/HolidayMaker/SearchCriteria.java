@@ -1,9 +1,7 @@
 package com.HolidayMaker;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Scanner;
 
 public class SearchCriteria {
@@ -71,7 +69,7 @@ public class SearchCriteria {
                     childActivity = "1";
 
                 } else if ( childCheck.equals("n") ) {
-
+                    childActivity = "0";
                 }
 
                 System.out.println("4. With a night activity: ");
@@ -80,6 +78,7 @@ public class SearchCriteria {
                    nightActivity = "1";
 
                 } else if ( nightCheck.equals("n") ) {
+                    nightActivity = "0";
 
                 }
 
@@ -89,6 +88,7 @@ public class SearchCriteria {
                   swimmingPool = "1";
 
                 } else if ( swimmingCheck.equals("n") ) {
+                    swimmingPool = "0";
 
                 }
                 System.out.println("6. With a restaurant: ");
@@ -97,6 +97,7 @@ public class SearchCriteria {
                     restaurant = "1";
 
                 } else if ( restaurantCheck.equals("n") ) {
+                    restaurant = "0";
 
                 }
                 System.out.println("7. See the result");
@@ -111,11 +112,14 @@ public class SearchCriteria {
                 statement.setString(4, distanceToCentre);
                 statement.setString(5, distanceToBeach);
                 resultSet = statement.executeQuery();
-                while (resultSet.next()) {
+                if (resultSet.next()) {
                     hotelName = "Hotel:  " + resultSet.getString("hotel_name");
-                }
-
                     System.out.println(hotelName);
+                }
+                else {
+    System.out.println("Sorry We do not have your request");
+}
+
 
 
             } catch (Exception e) {
