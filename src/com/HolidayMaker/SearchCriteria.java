@@ -103,7 +103,8 @@ public class SearchCriteria {
                 System.out.println("7. See the result");
 
 
-                statement = mySqlConnection.conn.prepareStatement("SELECT hotel_name FROM hotels JOIN facilities ON facility_id = facility_facility_id WHERE pool = ? AND night_activity = ? AND child_activity = ? AND  distance_centre <= ? AND distance_beach <= ?"
+                statement = mySqlConnection.conn.prepareStatement("SELECT hotel_name FROM hotels JOIN facilities ON facility_id = facility_facility_id WHERE pool = ? AND night_activity = ? AND child_activity = ? AND  distance_centre <= ? AND distance_beach <= ? " +
+                        "AND restaurant = ?"
                );
 
                 statement.setString(1, swimmingPool);
@@ -111,6 +112,7 @@ public class SearchCriteria {
                 statement.setString(3, childActivity);
                 statement.setString(4, distanceToCentre);
                 statement.setString(5, distanceToBeach);
+                statement.setString(6, restaurant);
                 resultSet = statement.executeQuery();
                 if (resultSet.next()) {
                     hotelName = "Hotel:  " + resultSet.getString("hotel_name");
@@ -119,9 +121,6 @@ public class SearchCriteria {
                 else {
     System.out.println("Sorry We do not have your request");
 }
-
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
