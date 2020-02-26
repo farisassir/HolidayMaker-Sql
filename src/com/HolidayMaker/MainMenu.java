@@ -29,7 +29,7 @@ public class MainMenu {
             System.out.println("                2. Search available room and Make a booking");
             System.out.println("                3. Change Booking");
             System.out.println("                4. Cancel Booking");
-            System.out.println("                4. Exit");
+            System.out.println("                5. Exit");
             String option=input.nextLine();
 
             switch (option) {
@@ -64,14 +64,7 @@ public class MainMenu {
         preparedStatement.setString (1, guestName);
         preparedStatement.setString (2, guestPhone);
         preparedStatement.execute();
+        System.out.println("Guest registered!");
 
-//        while (resultSet.next()) {
-//            String row="id: " + resultSet.getString("guest_id")
-//                    + ", Guest: " + resultSet.getString("guest_name")
-//                    + ", Phone Number: " + resultSet.getString("guest_phone");
-            System.out.println(" Guest registered!");
-//            System.out.println(row);
-//
-//        }
     }
 }
