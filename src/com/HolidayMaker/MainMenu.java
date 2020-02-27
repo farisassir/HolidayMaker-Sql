@@ -25,11 +25,11 @@ public class MainMenu {
         while (true) {
             System.out.println("       Welcome to Holidaymaker Management System        ");
             System.out.println("                        Main Menu                       ");
-            System.out.println("                1. Register a Guest");
-            System.out.println("                2. Search available room and Make a booking");
-            System.out.println("                3. Change Booking");
-            System.out.println("                4. Cancel Booking");
-            System.out.println("                5. Exit");
+            System.out.println("1. Register a Guest");
+            System.out.println("2. Search available room and Make a booking");
+            System.out.println("3. Change Booking");
+            System.out.println("4. Cancel Booking");
+            System.out.println("5. Exit");
             String option=input.nextLine();
 
             switch (option) {
@@ -55,7 +55,7 @@ public class MainMenu {
         }
     }
 
-    private void registerGuest() throws SQLException {
+    public void registerGuest() throws SQLException {
         System.out.println("Enter name: ");
         guestName = input.nextLine().toLowerCase();
         System.out.println("Enter Phone Number: ");

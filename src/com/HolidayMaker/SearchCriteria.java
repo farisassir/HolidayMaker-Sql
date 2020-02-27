@@ -96,8 +96,7 @@ public class SearchCriteria {
                 if ( restaurantCheck.equals("y") ) {
                     restaurant = "1";
 
-                } else if ( restaurantCheck.equals("n") ) {
-                    restaurant = "0";
+
 
                 }
                 System.out.println("7. See the result");
@@ -117,11 +116,18 @@ public class SearchCriteria {
                 if (resultSet.next()) {
                     hotelName = "Hotel:  " + resultSet.getString("hotel_name");
                     System.out.println(hotelName);
+                    System.out.println(" would you book a room?");
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.registerGuest();
+                    break;
                 }
+
                 else {
-    System.out.println("Sorry We do not have your request");
-}
-            } catch (Exception e) {
+                       System.out.println("Sorry We do not have your request try again!"); }
+break;
+            }
+
+            catch (Exception e) {
                 e.printStackTrace();
             }
 
