@@ -99,7 +99,7 @@ public class SearchCriteria {
 
 
                 }
-                System.out.println("7. See the result");
+                System.out.println("7. The available Hotel as desired: ");
 
 
                 statement = mySqlConnection.conn.prepareStatement("SELECT hotel_name FROM hotels JOIN facilities ON facility_id = facility_facility_id WHERE pool = ? AND night_activity = ? AND child_activity = ? AND  distance_centre <= ? AND distance_beach <= ? " +
